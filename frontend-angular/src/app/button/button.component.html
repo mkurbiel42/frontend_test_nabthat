@@ -1,0 +1,8 @@
+<button class="button" [class.button--wide]="isWide" [class.button--border-transparent]="hasTransparentBorder">
+    <ng-content></ng-content>
+    
+    <div *ngIf="hasCaret" class="button--caret">
+        &#8964;
+    </div>
+</button>
+

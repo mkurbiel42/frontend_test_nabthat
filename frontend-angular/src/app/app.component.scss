@@ -1,0 +1,29 @@
+@import "../styles.scss";
+
+:host{
+    display: block;
+    height: 100%;
+}
+
+.app{
+    position: relative;
+    display: grid;
+    background-color: $color-background;
+    width: 100%;
+    min-height: 100%;
+
+    grid-template-areas: 
+    'navbar navbar navbar'
+    'header header header'
+    'blocks blocks blocks'
+    ;
+
+    grid-template-rows: min-content min-content max-content;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.app__header-wrapper{
+    display: block;
+    width: fit-content;
+    padding-top: 2.5rem;
+}

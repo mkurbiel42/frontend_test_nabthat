@@ -1,0 +1,52 @@
+@import "../../styles.scss";
+
+:host{
+    grid-area: navbar;
+}
+
+.navbar{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    width: 100%;
+    height: fit-content;
+
+    padding: 0.75rem 2.25rem;
+
+    background-color: $color-background-header;
+
+    &__logo{
+        display: grid;
+        place-items: center;
+        width: 100px;
+        height: 100px;
+
+        padding: 0.4em;
+
+        background-color: $color-background-logo;
+        border-radius: 50%;
+
+        transition: all $transition-length-default;
+
+        &:hover{
+            padding: 0.3em;
+            background-color: $color-accent;
+            cursor: pointer;     
+        }
+    }
+
+    &__info{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: flex-end;
+
+        font-size: 1.35em;
+
+        &__personal-data{
+            font-weight: 100;
+        }
+    }
+}

@@ -1,1 +1,44 @@
-/* You can add global styles to this file, and also import other style files */
+// import and use Open Sans font
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+*{
+    font-family: 'Open Sans';
+
+    // normalize paddings and margins across the whole page
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+// declare root font size and global variables
+:root{
+    font-size: 20pt;
+}
+
+$color-background: #2a2d36;
+$color-background-footer: #15161a;
+$color-background-header: #0b0c10;
+$color-background-logo: #303030;
+$color-text: white;
+$color-text-secondary: #a2a7ba;
+$color-accent: #e78200;
+$color-accent-gradient-light: #ff9e23;
+$color-accent-gradient-dark: #cd7301;
+$color-border-hover: #fff8ba;
+$color-transparent-white: rgba(255,255,255,0.15);
+
+$transition-length-default: 0.2s;
+
+// set up html and body elements
+html{
+    height: 100%;
+}
+
+body{
+    height: 100%;
+    color: $color-text;
+}
+
+.bold{
+    font-weight: bold;
+}

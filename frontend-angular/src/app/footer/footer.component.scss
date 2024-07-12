@@ -1,0 +1,97 @@
+@import "../../styles.scss";
+
+:host{
+    grid-area: footer;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+.footer{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    width: 100%;
+    height: fit-content;
+
+    padding: 0.5rem 2.25rem;
+
+    background-color: $color-background-footer;
+    color: $color-transparent-white;
+
+    box-shadow: 0px -2px 0px rgba(0,0,0,0.75);
+
+    &__frame{
+        position: relative;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: flex-start;
+        
+        height: 115px;
+        width: 115px;
+
+        padding: 0.5em;
+
+        transition: all $transition-length-default;
+
+        & > span{
+            line-height: 0.85em;
+            text-transform: uppercase;
+        }
+        
+        &::after{
+            content: "";
+
+            position: absolute;
+
+            left: 0;
+            top: 0;
+        
+            display: block;
+            height: 115px;
+            width: 115px;
+
+            border: 1px solid white;
+
+            transition: all $transition-length-default;
+        }
+
+        &:hover{
+            color: $color-text-secondary;
+
+            &::after{
+                border: 1px solid $color-accent;
+                transform: rotateZ(90deg);
+            }
+        }
+    }
+
+    &__text-nabthat{
+        position: relative;
+
+        &::before, &::after{
+            content: "";
+
+            position: absolute;
+            bottom: 0.5em;
+
+            display: block;
+            width: 2em;
+            height: 0;
+
+            border-bottom: 1px solid $color-transparent-white;
+        }
+
+        &::before{
+            left: calc(100% + 0.35em);
+        }
+
+        &::after{
+            left: calc(-2.35em);
+        }
+    }
+}

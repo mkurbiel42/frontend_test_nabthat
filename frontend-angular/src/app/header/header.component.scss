@@ -1,0 +1,35 @@
+:host{
+    grid-area: header;
+}
+
+.header{
+    display: block;
+    width: 100vw;
+
+    &__h1{
+        position: relative;
+
+        text-align: center;
+        font-weight: 400;
+        font-size: 1.75em;
+    
+        text-shadow: 2px 2px 1px rgb(0,0,0,0.5);
+
+        &::after{
+            content: "";
+
+            position: absolute;
+            bottom: -0.75rem;
+            left: 50%;
+            
+            transform: translate(-50%, -50%);
+
+            display: block;
+            width: 230px;
+            height: 0px;
+            
+            border-bottom: 1px solid white;
+        }
+    }
+}
+
