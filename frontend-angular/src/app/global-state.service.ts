@@ -13,7 +13,7 @@ export class GlobalStateService {
   public isPersonalDataShown: boolean = false;
   public isBottomMenuShown: boolean = false;
 
-  public rightBlockText: string = ""
+  public rightBlockText: Array<string> = []
   
   constructor(private httpClient: HttpClient) {
   }
@@ -22,6 +22,8 @@ export class GlobalStateService {
     if (this.paragraphs.length != 0){
       return this.paragraphs;
     }
+    
+    this.paragraphs = localStorage.getItem("paragraphs");
 
     return new Promise((resolve, reject) => {
       this.httpClient.get("/paragraphs.json").subscribe(async (data) => {
@@ -42,31 +44,32 @@ export class GlobalStateService {
     }
     
     this.randomIndex = newRandomIndex;
-    console.log(this.randomIndex)
     return this.randomIndex;
   }
 
   modifyTexts(mode: string): void{
-    let initialText: string = mode == "swap" ? "" : this.rightBlockText;
+    let initialText: Array<string> = mode == "swap" ? [] : this.rightBlockText;
 
     if(this.radioOption === -1){
       return
     }
 
     if(this.radioOption !== 0){
-      this.rightBlockText = initialText + this.paragraphs[this.radioOption - 1];
+      this.rightBlockText = [...initialText, this.paragraphs[this.radioOption - 1]];
+      this.rightBlockText.sort();
       return
     }
 
     this.getNewRandomIndex()
-    this.rightBlockText = initialText + this.paragraphs[this.randomIndex];
+    this.rightBlockText = [...initialText, this.paragraphs[this.randomIndex]];
+    this.rightBlockText.sort();
   }
 
 
   resetSettings(): void{
     this.randomIndex = -1;
     this.radioOption = -1;
-    this.rightBlockText = this.paragraphs[0];
+    this.rightBlockText = [this.paragraphs[0]];
     this.isPersonalDataShown = false;
   }
 }

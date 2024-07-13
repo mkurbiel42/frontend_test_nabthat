@@ -32,7 +32,10 @@
 
     <app-block [headerText]="'blok z długą nazwą która sama się przytnie lorem ipsum dolor sit amet aaaaaaaaa'" [mobileHeaderAlignmentClass]="'content-block__header--align-center'">
       <div class="content-block__content">
-        {{ globalState.rightBlockText }}
+        <span *ngFor="let paragraph of globalState.rightBlockText">
+          {{paragraph}}
+          <br>
+        </span>
       </div>
     </app-block>
   </main>

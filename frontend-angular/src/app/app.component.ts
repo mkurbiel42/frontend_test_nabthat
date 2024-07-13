@@ -7,26 +7,23 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { BlockComponent } from "./block/block.component";
 import { GlobalStateService } from './global-state.service';
 import { FormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, ButtonComponent, HeaderComponent, FooterComponent, NavbarComponent, BlockComponent, FormsModule],
+  imports: [CommonModule, RouterOutlet, ButtonComponent, HeaderComponent, FooterComponent, NavbarComponent, BlockComponent, FormsModule],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
 export class AppComponent implements OnInit{
   public globalState: GlobalStateService;
-  private paragraphs: Array<string> = []
 
   constructor(globalState: GlobalStateService){
     this.globalState = globalState;
   }
 
   async ngOnInit() {
-    this.paragraphs = (await this.globalState.getParagraphs())
-    this.globalState.rightBlockText = this.paragraphs[0];
+    this.globalState.rightBlockText = [(await this.globalState.getParagraphs())[0]];
   }
-
-
 }
