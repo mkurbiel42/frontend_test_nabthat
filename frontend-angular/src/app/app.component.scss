@@ -125,7 +125,7 @@
 .app__header-wrapper{
     display: block;
     width: fit-content;
-    padding: 2.5rem 0 4.5rem;
+    padding: calc(140px + 2.5rem) 0 4.5rem;
 }
 
 @media (max-width: 1075px){

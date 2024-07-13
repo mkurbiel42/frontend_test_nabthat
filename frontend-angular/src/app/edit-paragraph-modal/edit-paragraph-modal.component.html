@@ -1,0 +1,31 @@
+<dialog #editParagraphModal class="edit-paragraph-modal">
+    <div class="edit-paragraph-modal__header">
+        <h4>Edytor tekstów</h4>
+        <button class="edit-paragraph-modal__button edit-paragraph-modal__button-close" (click)="closeModal()">
+            Zamknij
+        </button>
+    </div>
+    
+    <ul class="edit-paragraph-modal__paragraphs-list">
+        <li class="edit-paragraph-modal__paragraphs-list__item">
+            Nowy:
+            <textarea rows="3" [(ngModel)]="newText"></textarea>
+            <button class="edit-paragraph-modal__button edit-paragraph-modal__button-save" (click)="addNewParagraph(newText)">
+                Zapisz
+            </button>
+        </li>
+        <hr>
+        <li class="edit-paragraph-modal__paragraphs-list__item" *ngFor="let paragraph of globalState.paragraphs; index as idx">
+            <textarea rows="3" [value]="paragraph" #editedTextArea></textarea>
+            <button class="edit-paragraph-modal__button edit-paragraph-modal__button-save" (click)="globalState.saveParagraph(editedTextArea.value, idx)">
+                Zapisz
+            </button>
+            <button class="edit-paragraph-modal__button edit-paragraph-modal__button-close" (click)="editedTextArea.value = paragraph">
+                Anuluj
+            </button>
+            <button class="edit-paragraph-modal__button edit-paragraph-modal__button-delete" (click)="globalState.deleteParagraph(idx)">
+                Usuń
+            </button>
+        </li>
+    </ul>
+</dialog>
