@@ -15,3 +15,6 @@ Treści doklejane do bloku są sortowane alfabetycznie
 Zastosowanie LocalStorage do przechowywania treści 
 [są one ładowane z pliku .json jedynie przy pierwszym uruchomieniu strony oraz przy resecie ustawień]
 Edycja tekstów, usuwanie i dodawanie (modal z tą funkcjonalnością otwierany za pomocą przycisku przy lewej krawędzi)
+
+strona dostępna pod url:
+https://6692bd328c5ba50008253cb5--super-biscuit-57f613.netlify.app/
