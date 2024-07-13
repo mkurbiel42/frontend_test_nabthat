@@ -1,0 +1,49 @@
+@import "../../styles.scss";
+
+
+.content-block{
+    width: 100%;
+
+    &__header{
+        margin-bottom: 2.5rem;
+    
+        width: 100%;
+    
+        white-space: nowrap;
+        text-transform: uppercase;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    
+        text-align: center;
+    
+        color: white;
+    }
+}
+
+@media (max-width: 959px){
+    .content-block__header{
+        margin-bottom: 1rem;
+    }   
+}
+
+@media (min-width: 523px) and (max-width: 959px){
+    .content-block__header{
+        &--align-center{
+            text-align: center;
+        }
+    
+        &--align-left{
+            text-align: left;
+        }
+    
+        &--align-right{
+            text-align: right;
+        }
+    }   
+}
+
+@media (max-width: 523px) {
+    .content-block{
+        max-width: 100%;
+    }
+}

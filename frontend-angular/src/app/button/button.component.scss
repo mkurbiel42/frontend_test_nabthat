@@ -14,7 +14,7 @@
     font-weight: bold;
     text-transform: uppercase;
 
-    padding: 0.75em 3em;
+    padding: 0.75em 3.25em;
 
     border: 1px solid white;
     border-radius: 3px;
@@ -23,12 +23,17 @@
 
     z-index: 2;
 
-    &--caret{
+    &__caret{
+        display: block;
         font-size: 1.25em;
         padding-bottom: 0.5em;
-        transform: scaleX(1.5);
+        transform: rotateZ(180deg) scaleX(1.5);
 
         transition: all $transition-length-default;
+
+        &--active{
+            transform: scaleX(1.5);
+        }
     }
 
     &:hover{
@@ -38,10 +43,6 @@
 
         border-top: 1px solid $color-border-hover;
         border-bottom: 1px solid $color-border-hover;
-    }
-
-    &:hover > &--caret{
-        transform: rotateZ(180deg) scaleX(1.5);
     }
 
     &:not(&--border-transparent)::after{
@@ -67,15 +68,17 @@
         opacity: 1;
     }
 
-    &--wide{
-        padding: 0.75em 5.75em;
-    }
-
     &--border-transparent{
         border: 1px solid $color-transparent-white;
 
         &:hover{
             border: 1px solid white;
         }
+    }
+}
+
+@media (min-width: 524px){
+    .button--wide{
+        padding: 0.75em 5.75em;
     }
 }

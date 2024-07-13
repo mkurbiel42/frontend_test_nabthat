@@ -1,0 +1,9 @@
+<div class="bottom-menu" [class.bottom-menu--active]="globalState.isBottomMenuShown">
+    <span role="button" class="bottom-menu__option" (click)="globalState.resetSettings()">
+        <span class="bottom-menu__option__caret">&#8964;</span>Zresetuj ustawienia
+    </span>
+
+    <span role="button" class="bottom-menu__option" (click)="switchPersonalData()">
+        <span class="bottom-menu__option__caret">&#8964;</span>Pokaż dane osobowe
+    </span>
+</div>

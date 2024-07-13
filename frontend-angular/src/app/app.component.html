@@ -5,12 +5,36 @@
     <app-header></app-header>
   </div>
 
-  <!-- <app-button [isWide]="true">
-    Some button
-  </app-button>
+  <main class="app__main">
+    <app-block [headerText]="'blok pierwszy'" [mobileHeaderAlignmentClass]="'content-block__header--align-left'">
+      <div class="content-block__content">
+        <div class="content-block__content__form-row">
+          <input type="radio" name="radios-left-block" [value]="1" [(ngModel)]="globalState.radioOption" id="radio-left-block-1" />
+          <label for="radio-left-block-1">Opcja pierwsza</label>
+        </div>
+        <div class="content-block__content__form-row">
+          <input type="radio" name="radios-left-block" [value]="2" [(ngModel)]="globalState.radioOption" id="radio-left-block-2"/>
+          <label for="radio-left-block-2">Opcja druga</label>
+        </div>
+        <div class="content-block__content__form-row">
+          <input type="radio" name="radios-left-block" [value]="0" [(ngModel)]="globalState.radioOption" id="radio-left-block-random"/>
+          <label for="radio-left-block-random">Opcja losowa</label>
+        </div>
+      </div>
+    </app-block>
 
-  <app-button>
-    Not a wide button
-  </app-button> -->
+    <app-block [headerText]="'blok drugi'" [mobileHeaderAlignmentClass]="'content-block__header--align-right'">
+      <div class="content-block__content">
+        <app-button (onClick)="globalState.modifyTexts('swap')">ZASTĄP</app-button>
+        <app-button (onClick)="globalState.modifyTexts('paste')">DOKLEJ</app-button>
+      </div>
+    </app-block>
+
+    <app-block [headerText]="'blok z długą nazwą która sama się przytnie lorem ipsum dolor sit amet aaaaaaaaa'" [mobileHeaderAlignmentClass]="'content-block__header--align-center'">
+      <div class="content-block__content">
+        {{ globalState.rightBlockText }}
+      </div>
+    </app-block>
+  </main>
   <app-footer></app-footer>
 </div>

@@ -28,6 +28,7 @@ $color-border-hover: #fff8ba;
 $color-transparent-white: rgba(255,255,255,0.15);
 
 $transition-length-default: 0.2s;
+$padding-vertical-outer: 2.25rem;
 
 // set up html and body elements
 html{
@@ -41,4 +42,16 @@ body{
 
 .bold{
     font-weight: bold;
+}
+
+@media (min-width: 960px) and (max-width: 1199px){
+    :root{
+        font-size: 16pt;
+    }
+}
+
+@media (max-width: 623px){
+    :root{
+        font-size: 16pt
+    }
 }

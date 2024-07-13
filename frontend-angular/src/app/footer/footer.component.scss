@@ -2,12 +2,18 @@
 
 :host{
     grid-area: footer;
-    position: absolute;
-    bottom: 0;
+    // position: absolute;
+    // bottom: 0;
     width: 100%;
 }
 
+footer{
+    position: relative;
+}
+
 .footer{
+    position: relative;
+
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -16,12 +22,16 @@
     width: 100%;
     height: fit-content;
 
-    padding: 0.5rem 2.25rem;
+    padding: 0.5rem $padding-vertical-outer;
+
+    margin-top: 1.5em;
 
     background-color: $color-background-footer;
     color: $color-transparent-white;
 
     box-shadow: 0px -2px 0px rgba(0,0,0,0.75);
+
+    z-index: 2;
 
     &__frame{
         position: relative;
@@ -93,5 +103,17 @@
         &::after{
             left: calc(-2.35em);
         }
+    }
+}
+
+@media (max-width: 959px){
+    .footer__text-nabthat{
+        display: none;
+    }
+}
+
+@media (max-width: 523px){
+    .footer{
+        padding: 0.5rem 1rem;
     }
 }

@@ -1,0 +1,57 @@
+@import "../../styles.scss";
+
+.bottom-menu{
+    position: absolute;
+
+    bottom: 1em;
+    right: 0;
+
+    width: calc(8ch + 12em);
+    height: fit-content;
+
+    font-size: 0.65rem;
+
+    margin-right: $padding-vertical-outer;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 0.5em;
+    padding: 1em;
+    
+    background-color: white;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+
+    transition: all $transition-length-default;
+
+    color: black;
+
+    z-index: 1;
+
+    &--active{
+        bottom: 100%;
+    }
+
+    &__option{
+        cursor: pointer;
+        display: flex;
+
+        user-select: none;
+
+        gap: 0.5em;
+
+        transition: all $transition-length-default;
+
+        &:hover{
+            color: $color-accent;
+        }
+
+        &__caret{
+            display: block;
+            font-size: 1.25em;
+            transform: rotateZ(-90deg) scaleX(1.5);
+            padding-left: 0.05em;
+        }
+    }
+}
