@@ -1,0 +1,17 @@
+Wszystkie główne cele spełnione
+Plik JSON zawarty w projekcie
+
+Strona wykonana w frameworku Angular 18 (z paroma elementami funkcjonalności z poprzednich wersji Angulara)
+Style wykonane jedynie w SCSS, bez użycia Bootstrapa itp.
+Strona w wersji mobilnej czytelna do minimalnej szerokości ok. 350px
+
+W końcowym projekcie brak plików graficznych (oprócz jednego SVG - logo HTML5 - zawartego bezpośrednio w komponencie Nawigacji)
+Ramka w footerze obraca się
+Zastosowanie BEM w większości arkuszów styli (zastosowane relatywnie do stylowanego komponentu)
+Zastosowanie tagów semantycznych
+Wykorzystanie jednostek innych niż px tam gdzie to możliwe
+Treści doklejane do bloku są sortowane alfabetycznie
+
+Zastosowanie LocalStorage do przechowywania treści 
+[są one ładowane z pliku .json jedynie przy pierwszym uruchomieniu strony oraz przy resecie ustawień]
+Edycja tekstów, usuwanie i dodawanie (modal z tą funkcjonalnością otwierany za pomocą przycisku przy lewej krawędzi)
